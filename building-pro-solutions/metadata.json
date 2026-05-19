@@ -1,0 +1,8 @@
+{
+  "name": "Building Pro Solutions",
+  "description": "Premium construction, design, and development services for luxury residential and commercial projects in South Florida.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

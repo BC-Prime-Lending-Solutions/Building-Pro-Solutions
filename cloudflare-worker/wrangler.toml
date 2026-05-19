@@ -1,0 +1,11 @@
+name = "bps-contact-worker"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+# Do NOT put your real API key here.
+# Set it as a secret via:  wrangler secret put SENDGRID_API_KEY
+
+[[routes]]
+pattern = "bp-solutions-florida.com/api/contact"
+zone_name = "bp-solutions-florida.com"
