@@ -12,43 +12,43 @@ export const PortfolioPage = () => {
       title: 'The Coral Gables Estate',
       category: 'Residential',
       description: 'A 12,000 sq ft mediterranean-style manor featuring custom marble finishes and a private deep-water dock.',
-      image: '/src/assets/images/portfolio-manor.png',
+      image: '/images/portfolio-manor.png',
     },
     {
       title: 'Brickell High-Rise Penthouse',
       category: 'Interior Design',
       description: 'Ultra-modern 54th-floor residence with floor-to-ceiling glass and custom Italian cabinetry.',
-      image: '/src/assets/images/portfolio-penthouse.png',
+      image: '/images/portfolio-penthouse.png',
     },
     {
       title: 'Boca Raton Marina Club',
       category: 'Commercial',
       description: 'Exclusive waterfront development featuring a multi-level clubhouse and premium yacht slips.',
-      image: '/src/assets/images/portfolio-marina.png',
+      image: '/images/portfolio-marina.png',
     },
     {
       title: 'South Beach Modernism',
       category: 'Development',
       description: 'Sustainable luxury boutique condos integrating tropical greenery and smart-home technology.',
-      image: '/src/assets/images/portfolio-boutique.png',
+      image: '/images/portfolio-boutique.png',
     },
     {
       title: 'Infinity Oceanfront Pool',
       category: 'Outdoor & Pools',
       description: 'Custom-built infinity edge pool overlooking the ocean, featuring integrated LED lighting and a sun shelf.',
-      image: '/src/assets/images/portfolio-pool.png',
+      image: '/images/portfolio-pool.png',
     },
     {
       title: 'Tropical Luxury Patio',
       category: 'Outdoor & Pools',
       description: 'Expansive modern patio design seamlessly blending indoor and outdoor living with a glowing fire pit.',
-      image: '/src/assets/images/portfolio-patio.png',
+      image: '/images/portfolio-patio.png',
     },
     {
       title: 'Chef-Grade Summer Kitchen',
       category: 'Outdoor & Pools',
       description: 'High-end outdoor BBQ installation with marble countertops, stainless steel appliances, and custom cabinetry.',
-      image: '/src/assets/images/portfolio-bbq.png',
+      image: '/images/portfolio-bbq.png',
     }
   ];
 

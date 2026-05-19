@@ -39,7 +39,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gold/5"></div>
               <div className="w-full h-full border-l-4 border-t-4 border-gold/20 m-8"></div>
               <OptimizedImage
-                src="/src/assets/images/hero-mansion.png"
+                src="/images/hero-mansion.png"
                 alt="Luxury Architecture"
                 className="absolute inset-0 w-full h-full opacity-30 filter grayscale"
               />
@@ -157,13 +157,13 @@ const GeometricTrustBar = () => {
 const SocialShowcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const posts = [
-    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/src/assets/images/portfolio-penthouse.png', label: 'On-Site Progress' },
-    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/src/assets/images/portfolio-manor.png', label: 'Luxury Interiors' },
-    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/src/assets/images/portfolio-boutique.png', label: 'Coastal Design' },
-    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/src/assets/images/portfolio-marina.png', label: 'Project Reveal' },
-    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/src/assets/images/portfolio-pool.png', label: 'Infinity Pool' },
-    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/src/assets/images/portfolio-patio.png', label: 'Luxury Patio' },
-    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/src/assets/images/portfolio-bbq.png', label: 'Summer Kitchen' }
+    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/images/portfolio-penthouse.png', label: 'On-Site Progress' },
+    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/images/portfolio-manor.png', label: 'Luxury Interiors' },
+    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/images/portfolio-boutique.png', label: 'Coastal Design' },
+    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/images/portfolio-marina.png', label: 'Project Reveal' },
+    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/images/portfolio-pool.png', label: 'Infinity Pool' },
+    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/images/portfolio-patio.png', label: 'Luxury Patio' },
+    { platform: 'Instagram', handle: '@buildingprosolution', url: 'https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==', image: '/images/portfolio-bbq.png', label: 'Summer Kitchen' }
   ];
 
   useEffect(() => {
@@ -278,7 +278,7 @@ const AreaSection = () => {
               className="relative glass-card p-4 rotate-2 hover:rotate-0 transition-transform duration-700"
             >
               <OptimizedImage
-                src="/src/assets/images/area-skyline.png"
+                src="/images/area-skyline.png"
                 alt="Miami Skyline"
                 className="w-full h-auto rounded-sm"
               />
