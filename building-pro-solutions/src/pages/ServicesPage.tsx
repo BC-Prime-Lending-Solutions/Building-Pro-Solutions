@@ -1,50 +1,56 @@
 import { motion } from 'motion/react';
 import { Building2, Paintbrush, Hammer, ShieldCheck, ChevronRight, Waves } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 export const ServicesPage = () => {
   const services = [
     {
-      title: 'Luxury Architecture',
-      desc: 'Collaborative architectural design that maximizes waterfront views and modern South Florida aesthetics.',
+      title: 'Design-Build & Architecture',
+      desc: 'Collaborative design-build services integrating architectural vision with South Florida\'s coastal aesthetics and construction expertise.',
       icon: Paintbrush,
     },
     {
-      title: 'Custom Construction',
-      desc: 'Precision building techniques specialized for high-end residential and multi-million dollar estates.',
+      title: 'Custom Home Construction',
+      desc: 'Licensed general contracting for high-end residential custom homes, waterfront estates, and multi-million dollar properties across South Florida.',
       icon: Hammer,
     },
     {
-      title: 'Permit Management',
-      desc: 'Navigating the complex permitting landscape of Miami-Dade, Broward, and Palm Beach counties.',
+      title: 'Permit Expediting South Florida',
+      desc: 'Navigating the complex permitting landscape of Miami-Dade, Broward, and Palm Beach counties to keep your project on schedule.',
       icon: Building2,
     },
     {
-      title: 'Property Maintenance',
-      desc: 'Long-term care solutions for your luxury investment, ensuring your property remains in pristine condition.',
+      title: 'Commercial Construction',
+      desc: 'Full-service commercial construction and tenant improvements for retail, hospitality, and office developments across South Florida.',
       icon: ShieldCheck,
     },
     {
-      title: 'Pool Building & Renovations',
-      desc: 'Custom-designed luxury pools, infinity edges, and comprehensive renovations for your outdoor oasis.',
+      title: 'Pool Building & Renovation',
+      desc: 'Custom-designed luxury pools, infinity edges, and comprehensive pool renovations for residential and commercial properties in South Florida.',
       icon: Waves,
     }
   ];
 
   return (
     <div className="pt-24 min-h-screen bg-luxury-black">
+      <SEO
+        title="Construction & Remodeling Services in South Florida | BP Solutions Florida"
+        description="BP Solutions Florida offers general contracting, design-build, custom home construction, permit expediting, commercial construction, and pool building across South Florida."
+        canonical="/services"
+      />
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
             <div className="max-w-2xl">
-              <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block">Our Expertise</span>
+              <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block">Licensed General Contractor Services</span>
               <h1 className="text-5xl md:text-7xl text-white font-serif leading-tight">
-                Comprehensive Solutions for Your <br />
-                <span className="italic text-slate-400 font-light">Development Needs</span>
+                Construction &amp; Remodeling <br />
+                <span className="italic text-slate-400 font-light">Services in South Florida</span>
               </h1>
             </div>
             <div className="text-slate-400 md:max-w-xs text-base leading-relaxed border-l-2 border-gold/30 pl-4">
-              We handle everything from the initial draft to the final coat of paint, specializing in high-end South Florida developments.
+              From design-build to permit expediting, BP Solutions Florida handles every phase of your residential or commercial construction project across Miami-Dade, Broward, and Palm Beach.
             </div>
           </div>
 

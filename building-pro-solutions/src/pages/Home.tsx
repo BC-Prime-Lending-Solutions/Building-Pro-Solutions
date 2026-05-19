@@ -2,10 +2,16 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { MapPin } from 'lucide-react';
 import { OptimizedImage } from '../components/OptimizedImage';
+import { SEO } from '../components/SEO';
 
 export const Home = () => {
   return (
     <>
+      <SEO
+        title="BP Solutions Florida | General Contractor & Construction Company in South Florida"
+        description="BP Solutions Florida provides design-build, remodeling, permitting, and construction services across South Florida for residential and commercial projects."
+        canonical="/"
+      />
       <Hero />
       <GeometricTrustBar />
       <SocialShowcase />
@@ -40,7 +46,7 @@ const Hero = () => {
               <div className="w-full h-full border-l-4 border-t-4 border-gold/20 m-8"></div>
               <OptimizedImage
                 src="/images/hero-mansion.png"
-                alt="Luxury Architecture"
+                alt="Luxury custom home construction by BP Solutions Florida, a leading general contractor in South Florida"
                 className="absolute inset-0 w-full h-full opacity-30 filter grayscale"
               />
             </div>
@@ -62,13 +68,13 @@ const Hero = () => {
         >
           <div className="flex items-center gap-4 mb-6">
             <div className="h-px w-12 bg-gold"></div>
-            <span className="uppercase text-gold tracking-[0.4em] text-xs font-bold uppercase">Architecture & Development</span>
+            <span className="uppercase text-gold tracking-[0.4em] text-xs font-bold">Licensed General Contractor · South Florida</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[0.95] mb-8 text-white drop-shadow-lg">
             <span className="block">South Florida's</span>
-            <span className="block text-gold">Premier Construction</span>
-            <span className="block italic">Experts</span>
+            <span className="block text-gold">General Contractor</span>
+            <span className="block italic">&amp; Construction Experts</span>
           </h1>
 
           <p className="text-base md:text-lg text-white/80 max-w-2xl leading-relaxed mb-10 font-light border-l-2 border-tropical-teal pl-6">
@@ -178,8 +184,8 @@ const SocialShowcase = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-8">
           <div>
-            <span className="text-gold uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Follow Our Journey</span>
-            <h2 className="text-4xl md:text-5xl text-white font-serif">Behind <span className="italic text-white/50">the</span> Scenes</h2>
+            <span className="text-gold uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Our Construction Portfolio</span>
+            <h2 className="text-4xl md:text-5xl text-white font-serif">South Florida <span className="italic text-white/50">Construction</span> Projects</h2>
           </div>
           <div className="flex gap-4">
             <a href="https://www.instagram.com/buildingprosolution?igsh=MXJsZXkxazcwcGJlbQ==" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 px-6 py-3 text-xs font-bold uppercase tracking-widest text-white hover:bg-gold hover:text-luxury-black transition-all">
@@ -254,10 +260,10 @@ const AreaSection = () => {
       <div className="max-w-7xl mx-auto px-6 relative">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <div>
-            <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block">Regional Coverage</span>
-            <h2 className="text-4xl md:text-6xl text-white font-serif mb-8">Serving All of <br /><span className="text-slate-400 italic">South Florida</span></h2>
+            <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block">Service Area Coverage</span>
+            <h2 className="text-4xl md:text-6xl text-white font-serif mb-8">General Contractor Serving <br /><span className="text-slate-400 italic">Miami-Dade, Broward &amp; Palm Beach</span></h2>
             <p className="text-slate-400 mb-12 text-lg">
-              Our presence across the Florida coastline allows us to deliver high-quality construction and development services precisely where they are needed most.
+              BP Solutions Florida delivers licensed general contracting, design-build, and remodeling services across Miami-Dade, Broward, and Palm Beach counties — bringing premium construction expertise to every South Florida community.
             </p>
             <div className="flex flex-wrap gap-4">
               {areas.map((area, i) => (
@@ -279,7 +285,7 @@ const AreaSection = () => {
             >
               <OptimizedImage
                 src="/images/area-skyline.png"
-                alt="Miami Skyline"
+                alt="Miami-Dade and Broward County skyline — BP Solutions Florida service area for general contracting and construction"
                 className="w-full h-auto rounded-sm"
               />
               <div className="mt-6 p-4">

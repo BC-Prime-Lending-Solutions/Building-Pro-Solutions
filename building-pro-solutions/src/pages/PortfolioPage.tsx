@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
 import { OptimizedImage } from '../components/OptimizedImage';
+import { SEO } from '../components/SEO';
 
 export const PortfolioPage = () => {
   const [filter, setFilter] = useState('All');
@@ -11,44 +12,51 @@ export const PortfolioPage = () => {
     {
       title: 'The Coral Gables Estate',
       category: 'Residential',
-      description: 'A 12,000 sq ft mediterranean-style manor featuring custom marble finishes and a private deep-water dock.',
+      description: 'A 12,000 sq ft mediterranean-style custom home in Coral Gables featuring marble finishes and a private deep-water dock.',
       image: '/images/portfolio-manor.png',
+      alt: 'Custom home construction in Coral Gables, South Florida — BP Solutions Florida general contractor',
     },
     {
       title: 'Brickell High-Rise Penthouse',
       category: 'Interior Design',
-      description: 'Ultra-modern 54th-floor residence with floor-to-ceiling glass and custom Italian cabinetry.',
+      description: 'Ultra-modern 54th-floor penthouse remodel in Brickell with floor-to-ceiling glass and custom Italian cabinetry.',
       image: '/images/portfolio-penthouse.png',
+      alt: 'Luxury penthouse remodel in Brickell Miami by BP Solutions Florida construction company',
     },
     {
       title: 'Boca Raton Marina Club',
       category: 'Commercial',
-      description: 'Exclusive waterfront development featuring a multi-level clubhouse and premium yacht slips.',
+      description: 'Commercial waterfront development in Boca Raton featuring a multi-level clubhouse and premium yacht slips.',
       image: '/images/portfolio-marina.png',
+      alt: 'Commercial construction project Boca Raton marina club by BP Solutions Florida',
     },
     {
       title: 'South Beach Modernism',
       category: 'Development',
-      description: 'Sustainable luxury boutique condos integrating tropical greenery and smart-home technology.',
+      description: 'Sustainable luxury boutique condos in South Beach integrating tropical greenery and smart-home technology.',
       image: '/images/portfolio-boutique.png',
+      alt: 'South Beach luxury condo development by BP Solutions Florida design-build contractor',
     },
     {
       title: 'Infinity Oceanfront Pool',
       category: 'Outdoor & Pools',
-      description: 'Custom-built infinity edge pool overlooking the ocean, featuring integrated LED lighting and a sun shelf.',
+      description: 'Custom-built infinity edge pool in South Florida overlooking the ocean, with integrated LED lighting and sun shelf.',
       image: '/images/portfolio-pool.png',
+      alt: 'Custom infinity pool construction South Florida by BP Solutions Florida pool builder',
     },
     {
       title: 'Tropical Luxury Patio',
       category: 'Outdoor & Pools',
-      description: 'Expansive modern patio design seamlessly blending indoor and outdoor living with a glowing fire pit.',
+      description: 'Modern patio design in South Florida seamlessly blending indoor and outdoor living with a glowing fire pit.',
       image: '/images/portfolio-patio.png',
+      alt: 'Luxury outdoor patio construction South Florida by BP Solutions Florida remodeling contractor',
     },
     {
       title: 'Chef-Grade Summer Kitchen',
       category: 'Outdoor & Pools',
-      description: 'High-end outdoor BBQ installation with marble countertops, stainless steel appliances, and custom cabinetry.',
+      description: 'High-end outdoor kitchen installation with marble countertops, stainless steel appliances, and custom cabinetry.',
       image: '/images/portfolio-bbq.png',
+      alt: 'Outdoor summer kitchen construction South Florida by BP Solutions Florida general contractor',
     }
   ];
 
@@ -58,11 +66,16 @@ export const PortfolioPage = () => {
 
   return (
     <div className="pt-24 min-h-screen bg-charcoal">
+      <SEO
+        title="South Florida Construction & Remodeling Portfolio | BP Solutions Florida"
+        description="Explore BP Solutions Florida's portfolio of custom homes, commercial construction, pool building, and remodeling projects across Miami-Dade, Broward, and Palm Beach."
+        canonical="/portfolio"
+      />
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block underline underline-offset-8 decoration-gold/30">Selected Works</span>
-            <h1 className="text-5xl md:text-7xl text-white font-serif mb-12">Building the Skyline</h1>
+            <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block underline underline-offset-8 decoration-gold/30">Completed Projects</span>
+            <h1 className="text-5xl md:text-7xl text-white font-serif mb-12">South Florida <span className="italic text-slate-400">Construction</span> Portfolio</h1>
 
             <div className="flex flex-wrap justify-center gap-4 md:gap-8 border-b border-white/5 pb-8">
               {categories.map((cat) => (
@@ -97,7 +110,7 @@ export const PortfolioPage = () => {
                 >
                   <OptimizedImage
                     src={project.image}
-                    alt={project.title}
+                    alt={project.alt || project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/95 via-luxury-black/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />

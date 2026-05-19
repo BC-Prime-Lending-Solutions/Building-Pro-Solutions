@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 // ─── Cloudflare Worker endpoint ───────────────────────────────────────────────
 const API_ENDPOINT = 'https://bp-solutions-florida.com/api/contact';
@@ -102,6 +103,11 @@ export const ContactPage = () => {
   // ─── JSX ──────────────────────────────────────────────────────────────────
   return (
     <div className="pt-24 min-h-screen bg-charcoal">
+      <SEO
+        title="Contact BP Solutions Florida | Get a Free Construction Estimate"
+        description="Contact BP Solutions Florida for a free estimate on general contracting, home remodeling, design-build, commercial construction, and permit expediting in South Florida."
+        canonical="/contact"
+      />
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20">
@@ -109,12 +115,12 @@ export const ContactPage = () => {
             {/* ── Left: contact info ─────────────────────────────────────── */}
             <div>
               <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block">
-                Contact Us
+                South Florida General Contractor
               </span>
               <h1 className="text-5xl md:text-7xl text-white font-serif mb-8 leading-tight">
-                Let's Discuss Your <br />
+                Get a Free <br />
                 <span className="italic text-slate-400 font-light underline decoration-gold/30 underline-offset-8">
-                  Next Masterpiece
+                  Construction Estimate
                 </span>
               </h1>
               <p className="text-slate-400 mb-12 text-lg leading-relaxed">

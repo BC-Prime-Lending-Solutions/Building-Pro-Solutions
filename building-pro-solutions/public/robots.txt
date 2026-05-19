@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Block non-public paths
+Disallow: /api/
+Disallow: /*.json$
+
+# Sitemap
 Sitemap: https://bp-solutions-florida.com/sitemap.xml
