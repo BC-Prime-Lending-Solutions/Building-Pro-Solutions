@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
 import { OptimizedImage } from '../components/OptimizedImage';
 import { SEO } from '../components/SEO';
+import { PageTransition } from '../components/PageTransition';
 
 export const PortfolioPage = () => {
   const [filter, setFilter] = useState('All');
@@ -65,24 +66,25 @@ export const PortfolioPage = () => {
     : projects.filter(p => p.category === filter);
 
   return (
-    <div className="pt-24 min-h-screen bg-charcoal">
+    <PageTransition>
+    <div className="pt-20 md:pt-24 min-h-screen bg-charcoal">
       <SEO
         title="South Florida Construction & Remodeling Portfolio | BP Solutions Florida"
         description="Explore BP Solutions Florida's portfolio of custom homes, commercial construction, pool building, and remodeling projects across Miami-Dade, Broward, and Palm Beach."
         canonical="/portfolio"
       />
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 md:py-24">
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
           <div className="text-center mb-16">
             <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block underline underline-offset-8 decoration-gold/30">Completed Projects</span>
-            <h1 className="text-5xl md:text-7xl text-white font-serif mb-12">South Florida <span className="italic text-slate-400">Construction</span> Portfolio</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl text-white font-serif mb-8 md:mb-12">South Florida <span className="italic text-slate-400">Construction</span> Portfolio</h1>
 
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8 border-b border-white/5 pb-8">
+            <div className="flex flex-wrap justify-center gap-3 md:gap-8 border-b border-white/5 pb-6 md:pb-8">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
-                  className={`text-xs uppercase tracking-[0.2em] font-bold transition-all relative py-2 ${filter === cat ? 'text-gold' : 'text-white/50 hover:text-white'}`}
+                  className={`text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-bold transition-all relative py-2 px-1 ${filter === cat ? 'text-gold' : 'text-white/50 hover:text-white'}`}
                 >
                   {cat}
                   {filter === cat && (
@@ -96,7 +98,7 @@ export const PortfolioPage = () => {
             </div>
           </div>
 
-          <motion.div layout className="grid md:grid-cols-2 gap-10">
+          <motion.div layout className="grid sm:grid-cols-2 gap-6 md:gap-10">
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, i) => (
                 <motion.div
@@ -114,14 +116,14 @@ export const PortfolioPage = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/95 via-luxury-black/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 p-8 md:p-10 w-full transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="absolute bottom-0 left-0 p-5 sm:p-8 md:p-10 w-full transform md:translate-y-8 md:group-hover:translate-y-0 transition-transform duration-500">
                     <span className="text-gold text-xs uppercase tracking-widest mb-2 block font-bold">{project.category}</span>
                     <h3 className="text-2xl md:text-3xl font-serif text-white mb-4">{project.title}</h3>
-                    <p className="text-white/80 text-sm mb-6 max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 line-clamp-2">
+                    <p className="text-white/80 text-sm mb-4 md:mb-6 max-w-md md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 delay-100 line-clamp-2">
                       {project.description}
                     </p>
                     <div className="flex items-center gap-4">
-                      <button className="bg-gold text-luxury-black px-6 py-3 text-xs font-bold uppercase tracking-widest gold-shimmer opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200">
+                      <button className="bg-gold text-luxury-black px-6 py-3 text-xs font-bold uppercase tracking-widest gold-shimmer md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-all duration-700 delay-200">
                         View Project
                       </button>
                       <div className="h-0.5 flex-1 bg-gold/20 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
@@ -134,5 +136,6 @@ export const PortfolioPage = () => {
         </div>
       </section>
     </div>
+    </PageTransition>
   );
 };

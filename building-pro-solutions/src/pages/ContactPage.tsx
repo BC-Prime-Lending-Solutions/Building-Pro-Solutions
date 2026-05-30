@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { PageTransition } from '../components/PageTransition';
 
 // ─── Cloudflare Worker endpoint ───────────────────────────────────────────────
 const API_ENDPOINT = 'https://bp-solutions-florida.com/api/contact';
@@ -102,28 +103,29 @@ export const ContactPage = () => {
 
   // ─── JSX ──────────────────────────────────────────────────────────────────
   return (
-    <div className="pt-24 min-h-screen bg-charcoal">
+    <PageTransition>
+    <div className="pt-20 md:pt-24 min-h-screen bg-charcoal">
       <SEO
         title="Contact BP Solutions Florida | Get a Free Construction Estimate"
         description="Contact BP Solutions Florida for a free estimate on general contracting, home remodeling, design-build, commercial construction, and permit expediting in South Florida."
         canonical="/contact"
       />
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20">
+      <section className="py-12 md:py-24">
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
 
             {/* ── Left: contact info ─────────────────────────────────────── */}
             <div>
               <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block">
                 South Florida General Contractor
               </span>
-              <h1 className="text-5xl md:text-7xl text-white font-serif mb-8 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl text-white font-serif mb-6 md:mb-8 leading-tight">
                 Get a Free <br />
                 <span className="italic text-slate-400 font-light underline decoration-gold/30 underline-offset-8">
                   Construction Estimate
                 </span>
               </h1>
-              <p className="text-slate-400 mb-12 text-lg leading-relaxed">
+              <p className="text-slate-400 mb-8 md:mb-12 text-base md:text-lg leading-relaxed">
                 Whether you are looking to build a custom waterfront villa or a
                 commercial landmark, our team of experts is ready to guide you
                 through every step of the process.
@@ -161,7 +163,7 @@ export const ContactPage = () => {
             </div>
 
             {/* ── Right: form ────────────────────────────────────────────── */}
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-10 md:p-14 relative overflow-hidden shadow-2xl">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 sm:p-10 md:p-14 relative overflow-hidden shadow-2xl">
 
               {/* Success state */}
               {status === 'success' ? (
@@ -201,7 +203,7 @@ export const ContactPage = () => {
                   )}
 
                   {/* ── Row 1: Name + Email ── */}
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs uppercase tracking-widest text-gold font-bold">
                         Full Name <span className="text-red-400">*</span>
@@ -245,7 +247,7 @@ export const ContactPage = () => {
                   </div>
 
                   {/* ── Row 2: Phone + Service ── */}
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs uppercase tracking-widest text-gold font-bold">
                         Phone Number
@@ -350,5 +352,6 @@ export const ContactPage = () => {
         </div>
       </section>
     </div>
+    </PageTransition>
   );
 };

@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Building2, Paintbrush, Hammer, ShieldCheck, ChevronRight, Waves } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { PageTransition } from '../components/PageTransition';
 
 export const ServicesPage = () => {
   const services = [
@@ -33,18 +34,19 @@ export const ServicesPage = () => {
   ];
 
   return (
-    <div className="pt-24 min-h-screen bg-luxury-black">
+    <PageTransition>
+      <div className="pt-20 md:pt-24 min-h-screen bg-luxury-black">
       <SEO
         title="Construction & Remodeling Services in South Florida | BP Solutions Florida"
         description="BP Solutions Florida offers general contracting, design-build, custom home construction, permit expediting, commercial construction, and pool building across South Florida."
         canonical="/services"
       />
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+      <section className="py-12 md:py-24">
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20 gap-6 md:gap-8">
             <div className="max-w-2xl">
               <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block">Licensed General Contractor Services</span>
-              <h1 className="text-5xl md:text-7xl text-white font-serif leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl text-white font-serif leading-tight">
                 Construction &amp; Remodeling <br />
                 <span className="italic text-slate-400 font-light">Services in South Florida</span>
               </h1>
@@ -54,7 +56,7 @@ export const ServicesPage = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {services.map((service, i) => (
               <motion.div 
                 key={i}
@@ -62,7 +64,7 @@ export const ServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-charcoal/40 backdrop-blur-md p-10 group border border-white/10 hover:border-gold/50 hover:bg-charcoal transition-all duration-500 relative overflow-hidden flex flex-col min-h-[400px]"
+                className="bg-charcoal/40 backdrop-blur-md p-7 md:p-10 group border border-white/10 hover:border-gold/50 hover:bg-charcoal transition-all duration-500 relative overflow-hidden flex flex-col min-h-[320px] md:min-h-[400px]"
               >
                 <span className="text-gold font-serif italic text-4xl mb-6 opacity-30 group-hover:opacity-100 transition-opacity">0{i+1}</span>
                 <div className="flex items-center gap-4 mb-6">
@@ -84,5 +86,6 @@ export const ServicesPage = () => {
         </div>
       </section>
     </div>
+    </PageTransition>
   );
 };

@@ -13,12 +13,44 @@
 }
 
 @layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-luxury-black text-white font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
+  }
+
+  /* Ensure tap targets are large enough on mobile */
+  button, a {
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent text overflow issues on mobile */
+  p, span, h1, h2, h3, h4 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+/* Hide default cursor on devices with a mouse */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button, input, select, textarea, [role="button"] {
+    cursor: none !important;
   }
 }
 

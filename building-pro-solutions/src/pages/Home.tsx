@@ -3,10 +3,13 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { MapPin } from 'lucide-react';
 import { OptimizedImage } from '../components/OptimizedImage';
 import { SEO } from '../components/SEO';
+import { PageTransition } from '../components/PageTransition';
+import { MagneticButton } from '../components/MagneticButton';
+import { Marquee } from '../components/Marquee';
 
 export const Home = () => {
   return (
-    <>
+    <PageTransition>
       <SEO
         title="BP Solutions Florida | General Contractor & Construction Company in South Florida"
         description="BP Solutions Florida provides design-build, remodeling, permitting, and construction services across South Florida for residential and commercial projects."
@@ -16,7 +19,7 @@ export const Home = () => {
       <GeometricTrustBar />
       <SocialShowcase />
       <AreaSection />
-    </>
+    </PageTransition>
   );
 };
 
@@ -28,10 +31,10 @@ const Hero = () => {
   });
 
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <section ref={containerRef} className="relative h-screen flex items-center overflow-hidden pt-20">
+    <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Background with Grid Layout */}
       <div className="absolute inset-0 z-0 opacity-40">
         <motion.div style={{ y: bgY }} className="h-full">
@@ -58,7 +61,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <div className="relative z-10 w-full flex flex-col justify-center px-6 md:px-16 md:max-w-4xl">
+      <div className="relative z-10 w-full flex flex-col justify-center px-5 md:px-16 md:max-w-4xl pb-8 md:pb-0">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -66,29 +69,29 @@ const Hero = () => {
           viewport={{ once: true }}
           style={{ y: textY }}
         >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-gold"></div>
-            <span className="uppercase text-gold tracking-[0.4em] text-xs font-bold">Licensed General Contractor · South Florida</span>
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-gold shrink-0"></div>
+            <span className="uppercase text-gold tracking-[0.15em] md:tracking-[0.4em] text-[10px] md:text-xs font-bold">Licensed General Contractor · South Florida</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[0.95] mb-8 text-white drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif leading-[0.95] mb-6 md:mb-8 text-white drop-shadow-lg">
             <span className="block">South Florida's</span>
             <span className="block text-gold">General Contractor</span>
             <span className="block italic">&amp; Construction Experts</span>
           </h1>
 
-          <p className="text-base md:text-lg text-white/80 max-w-2xl leading-relaxed mb-10 font-light border-l-2 border-tropical-teal pl-6">
+          <p className="text-sm md:text-lg text-white/80 max-w-2xl leading-relaxed mb-8 md:mb-10 font-light border-l-2 border-tropical-teal pl-4 md:pl-6">
             From luxury waterfront mansions to high-rise developments, Building Pro Solutions delivers turnkey architectural and construction excellence across Miami, Boca Raton, and the Palm Beaches.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-gold text-luxury-black px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-gold/80 transition-all relative group overflow-hidden">
+          <div className="flex flex-col sm:flex-row gap-3">
+            <MagneticButton className="bg-gold text-luxury-black px-8 py-4 md:px-10 md:py-5 text-sm font-bold uppercase tracking-widest hover:bg-gold/80 transition-all relative group overflow-hidden">
               <span className="relative z-10">Request Consultation</span>
               <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity blur-sm"></div>
-            </button>
-            <button className="border border-white/20 px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-luxury-black transition-all backdrop-blur-sm text-white">
+            </MagneticButton>
+            <MagneticButton className="border border-white/20 px-8 py-4 md:px-10 md:py-5 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-luxury-black transition-all backdrop-blur-sm text-white">
               View Portfolio
-            </button>
+            </MagneticButton>
           </div>
         </motion.div>
       </div>
@@ -156,6 +159,18 @@ const GeometricTrustBar = () => {
           <span className="text-xs text-tropical-teal font-bold uppercase tracking-widest">In-House</span>
         </div>
       </div>
+      <div className="w-full border-t border-white/5 py-4 mt-8 md:mt-0 overflow-hidden">
+        <Marquee 
+          speed={30}
+          items={[
+            <span key="1" className="text-white/50 text-xs uppercase tracking-widest px-8">Luxury Custom Homes</span>,
+            <span key="2" className="text-white/50 text-xs uppercase tracking-widest px-8">Waterfront Estates</span>,
+            <span key="3" className="text-white/50 text-xs uppercase tracking-widest px-8">Commercial High-Rises</span>,
+            <span key="4" className="text-white/50 text-xs uppercase tracking-widest px-8">Architectural Design</span>,
+            <span key="5" className="text-white/50 text-xs uppercase tracking-widest px-8">Remodeling & Additions</span>
+          ]} 
+        />
+      </div>
     </section>
   );
 };
@@ -197,7 +212,7 @@ const SocialShowcase = () => {
           </div>
         </div>
 
-        <div className="relative w-full">
+        <div className="relative w-full overflow-hidden">
           <motion.div
             className="flex gap-4 cursor-grab active:cursor-grabbing"
             animate={{ x: `calc(-${currentIndex * 100}% - ${currentIndex * 16}px)` }}
@@ -206,14 +221,14 @@ const SocialShowcase = () => {
             {posts.map((post, i) => (
               <a
                 key={i} href={post.url} target="_blank" rel="noopener noreferrer"
-                className="group relative aspect-[4/5] md:aspect-[16/9] w-full shrink-0 overflow-hidden bg-charcoal border border-white/5 hover:border-gold/30 transition-colors block"
+                className="group relative aspect-[3/4] sm:aspect-[4/5] md:aspect-[16/9] w-full shrink-0 overflow-hidden bg-charcoal border border-white/5 hover:border-gold/30 transition-colors block"
               >
                 <OptimizedImage
                   src={post.image}
                   alt={post.label}
                   className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
                 />
-                <div className="absolute inset-0 flex flex-col justify-between p-8 z-10">
+                <div className="absolute inset-0 flex flex-col justify-between p-5 md:p-8 z-10">
                   <div className="flex justify-between items-start">
                     <div className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 flex items-center justify-center">
                       <span className="text-white text-xs font-bold uppercase tracking-tighter">{post.platform[0]}</span>
@@ -238,12 +253,13 @@ const SocialShowcase = () => {
           </motion.div>
 
           {/* Carousel Indicators */}
-          <div className="flex justify-center gap-3 mt-8">
+          <div className="flex justify-center gap-3 mt-6 md:mt-8">
             {posts.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrentIndex(i)}
-                className={`h-1.5 transition-all duration-500 ${currentIndex === i ? 'w-8 bg-gold' : 'w-4 bg-white/20 hover:bg-white/40'}`}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-2 rounded-full transition-all duration-500 ${currentIndex === i ? 'w-8 bg-gold' : 'w-4 bg-white/20 hover:bg-white/40'}`}
               />
             ))}
           </div>
@@ -256,13 +272,13 @@ const SocialShowcase = () => {
 const AreaSection = () => {
   const areas = ['Miami', 'Miami Beach', 'Brickell', 'Coral Gables', 'Coconut Grove', 'Pinecrest', 'Fort Lauderdale', 'Boca Raton', 'Delray Beach', 'West Palm Beach', 'Palm Beach'];
   return (
-    <section className="py-24 bg-luxury-black overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 relative">
-        <div className="grid md:grid-cols-2 gap-20 items-center">
+    <section className="py-16 md:py-24 bg-luxury-black overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 relative">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div>
             <span className="text-gold uppercase tracking-widest text-sm font-bold mb-4 block">Service Area Coverage</span>
-            <h2 className="text-4xl md:text-6xl text-white font-serif mb-8">General Contractor Serving <br /><span className="text-slate-400 italic">Miami-Dade, Broward &amp; Palm Beach</span></h2>
-            <p className="text-slate-400 mb-12 text-lg">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl text-white font-serif mb-6 md:mb-8">General Contractor Serving <br /><span className="text-slate-400 italic">Miami-Dade, Broward &amp; Palm Beach</span></h2>
+            <p className="text-slate-400 mb-8 md:mb-12 text-base md:text-lg">
               BP Solutions Florida delivers licensed general contracting, design-build, and remodeling services across Miami-Dade, Broward, and Palm Beach counties — bringing premium construction expertise to every South Florida community.
             </p>
             <div className="flex flex-wrap gap-4">

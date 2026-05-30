@@ -30,10 +30,10 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-luxury-black/95 backdrop-blur-md h-20' : 'bg-transparent h-24'} border-b border-white/10 px-6 md:px-12 flex items-center justify-between`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-luxury-black/95 backdrop-blur-md h-16 md:h-20' : 'bg-transparent h-20 md:h-24'} border-b border-white/10 px-4 md:px-12 flex items-center justify-between`}>
       <Link to="/" className="flex flex-col group">
-        <span className="text-xl md:text-2xl font-serif tracking-tighter text-gold uppercase leading-none group-hover:text-white transition-colors">Building Pro</span>
-        <span className="text-[10px] md:text-xs tracking-[0.3em] text-white/60 uppercase ml-0.5 group-hover:text-gold transition-colors">Solutions / South Florida</span>
+        <span className="text-lg md:text-2xl font-serif tracking-tighter text-gold uppercase leading-none group-hover:text-white transition-colors">Building Pro</span>
+        <span className="text-[9px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] text-white/60 uppercase ml-0.5 group-hover:text-gold transition-colors">Solutions / South Florida</span>
       </Link>
 
       {/* Desktop Nav */}
@@ -50,7 +50,7 @@ export const Navbar = () => {
       </div>
 
       {/* Mobile Toggle */}
-      <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white hover:text-gold transition-colors relative z-[60]">
+      <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white hover:text-gold transition-colors relative z-[60] p-1" aria-label="Toggle menu">
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
 

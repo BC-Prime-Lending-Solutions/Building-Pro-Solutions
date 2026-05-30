@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
-    <footer className="bg-luxury-black border-t border-white/5 py-16">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-luxury-black border-t border-white/5 py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-5 md:px-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-12 md:mb-16">
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2 group w-max">
                <Building2 className="text-gold w-6 h-6 group-hover:scale-110 transition-transform" />
@@ -46,14 +46,14 @@ export const Footer = () => {
           <div>
             <h4 className="text-white font-serif text-lg mb-6">Weekly Updates</h4>
             <p className="text-slate-400 text-sm mb-4">Join our newsletter for luxury design trends.</p>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <input type="email" placeholder="Email" className="bg-white/5 border border-white/10 px-4 py-3 text-sm w-full focus:outline-none focus:border-gold/50 transition-colors text-white" />
-              <button className="bg-gold text-luxury-black px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Join</button>
+              <button className="bg-gold text-luxury-black px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-all whitespace-nowrap">Join</button>
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-slate-500 text-xs uppercase tracking-widest font-medium">
             © {new Date().getFullYear()} Building Pro Solutions. All Rights Reserved.
           </p>
